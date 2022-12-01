@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
-const CommentSchema = new mongoose.Schema(
+const GallerySchema = new mongoose.Schema(
   {
-    images: {
-      type: Array,
-      default: [],
+    image: {
+      public_id: { type: String },
+      url: {
+        type: String,
+      },
+    },
+    caption: {
+      type: String,
     },
     school: {
       type: mongoose.Types.ObjectId,
@@ -14,4 +19,4 @@ const CommentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Comment", CommentSchema);
+module.exports = mongoose.model("Gallery", GallerySchema);

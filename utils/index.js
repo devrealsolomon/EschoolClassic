@@ -1,9 +1,11 @@
-const authorizeUser = require("./authorizeUser");
-const userTokenPayload = require("./userTokenPayload");
+const {authorizeUser,authorizeAdmin} = require("./authorizeUser");
+const { schoolTokenPayload, userTokenPayload } = require("./tokenPayloads");
 const { isTokenValid, createJWT } = require("./jwt");
 module.exports = {
-  userTokenPayload,
+  schoolTokenPayload,
   createJWT,
   isTokenValid,
+  userTokenPayload,
   authorizeUser,
+  authorizeAdmin
 };

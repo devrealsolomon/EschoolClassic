@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const eventSchema = new mongoose.Schema({
-  
   title: {
     type: String,
     required: true,
@@ -10,14 +9,22 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  eventDate: {
-    type: Number,
-    min: [new Date().getTime() + 1, 'Remind time should be bigger than current time'],
+  category: {
+    type: String,
+  },
+  event_date: {
+    type: Date,
     required: true,
   },
-  isCanceled: {
+  is_cancelled: {
     type: Boolean,
     default: false,
+  },
+  event_image: {
+    public_id: { type: String },
+    url: {
+      type: String,
+    },
   },
   school: {
     type: mongoose.Schema.Types.ObjectId,
